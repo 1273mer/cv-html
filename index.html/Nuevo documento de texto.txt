@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currículum Vitae Inclusivo</title>
+  <style>
+    :root {
+      --primary-color: #003366;
+      --link-color: #0066cc;
+      --highlight-bg: #ffff99;
+      --bg-color: #ffffff;
+      --text-color: #000000;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      color: var(--primary-color);
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: underline;
+    }
+
+    a:focus,
+    a:hover {
+      background-color: var(--highlight-bg);
+    }
+
+    .section {
+      margin-bottom: 24px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .text-size-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .text-size-buttons button {
+      padding: 8px 12px;
+      font-size: 1em;
+      cursor: pointer;
+      background-color: #003366;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .text-size-buttons button:hover {
+      background-color: #0055aa;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 18px;
+      }
+
+      .container {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="text-size-buttons" aria-label="Controles de accesibilidad para el texto">
+      <button onclick="changeTextSize(1)">Aumentar texto</button>
+      <button onclick="changeTextSize(-1)">Disminuir texto</button>
+      <button onclick="resetTextSize()">Restablecer texto</button>
+    </div>
+
+    <header class="section" aria-labelledby="datos-contacto">
+      <h1 id="datos-contacto">María José García</h1>
+      <p>Email: <a href="mailto:maria.jose@email.com">maria.jose@email.com</a></p>
+      <p>GitHub: <a href="https://github.com/mariajose">mariajose</a></p>
+      <p>Ciudad: Lima, Perú</p>
+    </header>
+
+    <section class="section" aria-labelledby="perfil-profesional">
+      <h2 id="perfil-profesional">Perfil Profesional</h2>
+      <p>Estudiante de Ingeniería Informática con experiencia en desarrollo web, diseño accesible y resolución de problemas. Apasionada por la tecnología inclusiva y el desarrollo de soluciones útiles para todos.</p>
+    </section>
+
+    <section class="section" aria-labelledby="habilidades">
+      <h2 id="habilidades">Habilidades</h2>
+      <h3>Técnicas</h3>
+      <ul>
+        <li>HTML5, CSS3, JavaScript</li>
+        <li>Git y GitHub</li>
+        <li>Figma</li>
+      </ul>
+      <h3>Blandas</h3>
+      <ul>
+        <li>Comunicación efectiva</li>
+        <li>Trabajo en equipo</li>
+        <li>Gestión del tiempo</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="experiencia-academica">
+      <h2 id="experiencia-academica">Experiencia Académica</h2>
+      <p><strong>Desarrolladora Web – Blue Doodle Project</strong><br />
+      📍 Lima, Perú | 📅 Oct/2024 – Dic/2024</p>
+      <ul>
+        <li>Diseñé e implementé una página web accesible para una pastelería local.</li>
+        <li>Optimicé la interfaz para usuarios con baja visión usando alto contraste y etiquetas descriptivas.</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="cursos">
+      <h2 id="cursos">Certificaciones y Cursos</h2>
+      <ul>
+        <li>Curso de Accesibilidad Web – Platzi (2025)</li>
+        <li>Curso de HTML y CSS – FreeCodeCamp (2024)</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="idiomas">
+      <h2 id="idiomas">Idiomas</h2>
+      <ul>
+        <li>Español – Nativo</li>
+        <li>Inglés – B1 (Intermedio)</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="referencias">
+      <h2 id="referencias">Referencias</h2>
+      <p>Disponibles a solicitud</p>
+    </section>
+  </div>
+
+  <script>
+    let currentSize = 16;
+
+    function changeTextSize(step) {
+      currentSize += step;
+      if (currentSize < 12) currentSize = 12;
+      document.body.style.fontSize = currentSize + "px";
+    }
+
+    function resetTextSize() {
+      currentSize = 16;
+      document.body.style.fontSize = currentSize + "px";
+    }
+  </script>
+</body>
+</html>
